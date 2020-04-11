@@ -12,6 +12,11 @@ Page({
   bindViewTap: function() {
     
   },
+  handleClick(){
+    wx.navigateTo({
+      url: '/pages/list/list',
+    })
+  },
   handleGetUserInfo(data){
     if (data.detail.rawData) {
       // 用户点击的是允许
