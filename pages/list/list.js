@@ -17,7 +17,19 @@ Page({
       listData:datas.list_data
     })
   },
-
+  // 点击跳转到详情页
+  toDetail(event){
+    let index=event.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: '/pages/detail/detail?index='+index,
+    })
+  },
+  carouselToDetail(event){
+    let index=event.target.dataset.index;
+    wx.navigateTo({
+      url: '/pages/detail/detail?index='+index,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

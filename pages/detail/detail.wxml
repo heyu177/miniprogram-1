@@ -1,13 +1,13 @@
 <!--pages/detail/detail.wxml-->
 <view class="detailContainer">
-	<image src="/images/detail/carousel/01.jpg" class="headImg"></image>
+	<image src="{{detailObj.detail_img}}" class="headImg"></image>
 	<view class="avatar_date">
-		<image src="/images/avatar/0.png"></image>
-		<text>美国队长</text>
+		<image src="{{detailObj.avatar}}"></image>
+		<text>{{detailObj.author}}</text>
 		<text>发布于</text>
-		<text>may 19 2018</text>
+		<text>{{detailObj.date}}</text>
 	</view>
-	<text class="company">尚硅谷</text>
+	<text class="company">{{detailObj.title}}</text>
 	<view class="collection_share_container">
 		<view class="collection_share">
 			<image src="/images/icon/collection-anti.png"></image>
@@ -16,5 +16,5 @@
 		<view class="line"></view>
 	</view>
 	<button>转发此文章</button>
-	<text class="content">但是嘎嘎嘎嘎嘎嘎嘎嘎发光管广告歌广告歌法撒旦顶顶顶顶顶顶顶顶顶顶顶顶啊啊啊啊啊啊啊啊啊啊啊</text>
+	<text class="content">{{detailObj.detail_content}}</text>
 </view>

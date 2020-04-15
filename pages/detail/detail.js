@@ -1,18 +1,24 @@
 // pages/detail/detail.js
+let datas=require("../../datas/list-data.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    detailObj:{},
+    index:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let index=options.index;
+    this.setData({
+      detailObj:datas.list_data[index],
+      index
+    });
   },
 
   /**
