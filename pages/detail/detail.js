@@ -1,21 +1,18 @@
-// pages/list/list.js
-let datas=require("../../datas/list-data.js");
+// pages/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    listData:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      listData:datas.list_data
-    })
+
   },
 
   /**
