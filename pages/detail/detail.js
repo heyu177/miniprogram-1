@@ -9,7 +9,8 @@ Page({
     detailObj: {},
     index: null,
     // 是否收藏
-    isCollected: false
+    isCollected: false,
+    isMusicPlay:false
   },
 
   /**
@@ -62,7 +63,13 @@ Page({
         });
       }
     });
-
+  },
+// 处理音乐播放
+  handleMusicPlay(){
+    let isMusicPlay=!this.data.isMusicPlay;
+    this.setData({
+      isMusicPlay
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
