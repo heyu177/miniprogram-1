@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 let datas = require("../../datas/list-data.js");
+let appDatas=getApp();
 Page({
 
   /**
@@ -33,6 +34,27 @@ Page({
       this.setData({
         isCollected:true
       })
+    }
+    // 监听音乐播放
+    wx.onBackgroundAudioPlay((res) => {
+      this.setData({
+        isMusicPlay:true
+      });
+      appDatas.data.isPlay=true;
+      appDatas.data.pageIndex=index;
+    });
+    // 监听音乐暂停
+    wx.onBackgroundAudioPause(() => {
+      this.setData({
+        isMusicPlay:false
+      });
+      appDatas.data.isPlay=false;
+    });
+    // 如果音乐在当前页播放
+    if (appDatas.data.isPlay && appDatas.data.pageIndex==index) {
+      this.setData({
+        isMusicPlay:true
+      });
     }
   },
   // 处理收藏
@@ -70,6 +92,25 @@ Page({
     this.setData({
       isMusicPlay
     });
+    if (isMusicPlay) {
+      // 播放音乐
+      let {dataUrl,title}=this.data.detailObj.music;
+      wx.playBackgroundAudio({
+        dataUrl,
+        title
+      })
+    }else{
+      // 暂停音乐
+      wx.pauseBackgroundAudio();
+    }
+  },
+  // 处理分享
+  handleShare(){
+    wx.showActionSheet({
+      itemList: [
+        "分享到朋友圈","分享到qq空间","分享到微博"
+      ]
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

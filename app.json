@@ -5,6 +5,7 @@
     "pages/logs/logs",
     "pages/detail/detail"
   ],
+  "requiredBackgroundModes":["audio"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#8ed145",
