@@ -13,9 +13,9 @@ Page({
     
   },
   handleClick(){
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/list/list',
-    })
+    });
   },
   handleGetUserInfo(data){
     if (data.detail.rawData) {
