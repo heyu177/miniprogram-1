@@ -1,6 +1,4 @@
-// pages/movies/movies.js
-// 请求的路径
-const MOVIE_URL="http://t.yushu.im/v2/movie/top250";
+// pages/movieDetail/movieDetail.js
 let appDatas=getApp();
 Page({
 
@@ -8,22 +6,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    moviesArr:[]
+    movieDetail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: MOVIE_URL,
-      success:(res) => {
-        this.setData({
-          moviesArr:res.data.subjects
-        });
-        appDatas.data.moviesArr=res.data.subjects;
-      }
-    })
+    this.setData({
+      movieDetail:appDatas.data.moviesArr[options.index]
+    });
   },
 
   /**
